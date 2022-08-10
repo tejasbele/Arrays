@@ -7,19 +7,18 @@ using namespace std;
 //using sliding window we can solve this problem in O(N) time complexity
 //explanation is in the end of main function
 
-int Fun(int a[], int size_a, int length){
-  int result[size_a - length + 1];
+int Fun(int a[], int size_a, int k){
+  int result[size_a - k + 1];
+  int size_res = sizeof(result)/sizeof(int);
   int sum = 0;
-  for(int i=0;i<length;i++){
+  for(int i=0;i<k;i++){
     sum += a[i];
   }
   result[0] = sum;
-  for(int i=0; i<(size_a - length); i++){
-    sum += a[i+length] - a[i];
+  for(int i=0; i<size_res; i++){
+    sum += a[i+k] - a[i];
     result[i+1] = sum;
   }
-
-  int size_res = sizeof(result)/sizeof(int);
 
   for(int i=0; i<size_res; i++){
     cout<<result[i]<<endl;
