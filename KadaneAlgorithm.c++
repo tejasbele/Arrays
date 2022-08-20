@@ -3,6 +3,7 @@ using namespace std;
 
 //Kadane's Algorithm
 //Used to find maximum sum of subarray in a given array
+//time complexity is O(N)
 
 int MaxSum(int a[6], int size){
   int max = 0;
